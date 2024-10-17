@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Pasteles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="redes.html">Redes Sociales</a></li>
+            <li><a href="logout.php">Cerrar Sesión</a></li>
+        </ul>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo de Charly's Burgers">
+        </div>
+    </nav>
+    
+
+    <h1 style="text-align:center;">CHARLYS BURGERS</h1>
+
+    <h2 style="text-align:center;">Hamburgesas destacadas</h2>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <div class="carousel-image">
+                <img src="sencilla.jpg" alt="Hamburgesa sencilla">
+                <div class="caption">Hamburgesa Sencilla</div>
+            </div>
+            <div class="carousel-image">
+                <img src="philadelphia.jpg" alt="Hamburgesa de queso philadelphia">
+                <div class="caption">Hamburgesa de queso philadelphia</div>
+            </div>
+            <div class="carousel-image">
+                <img src="2carnes.jpg" alt="Hamburgesa Doble">
+                <div class="caption">Hamburgesa Doble</div>
+            </div>
+            <div class="carousel-image">
+                <img src="tejana.jpg" alt="Hamburgesa Texana">
+                <div class="caption">Hamburgesa Texana</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-image');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        setInterval(nextSlide, 3000);
+    </script>
+
+</body>
+</html>

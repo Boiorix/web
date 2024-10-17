@@ -1,0 +1,238 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: #d9534f;
+    color: white;
+    padding: 20px 0;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    margin: 0; /* Eliminar márgenes por defecto */
+    color: white; /* Color del texto */
+    background-color: #d9534f; /* Mismo color de fondo que el header */
+    padding: 10px 0; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+h2 {
+    margin-top: 10px; /* Espaciado superior adicional solo para h2 */
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carousel-image .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-image:hover .caption {
+    opacity: 1;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: auto; /* Para que el footer esté siempre abajo */
+    color: #777;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+/* Social media links */
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media h2 {
+    margin-bottom: 20px;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li {
+    margin: 15px 0;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.social-media img {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Menu (hamburgers) */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.hamburguesa {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hamburguesa img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hamburguesa:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 100%;
+    }
+
+    form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+}
